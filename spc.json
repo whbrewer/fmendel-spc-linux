@@ -24,7 +24,7 @@
          "options": "legend: { position: 'sw' }, xaxis: { axisLabel: 'Generations', axisLabelFontSizePixels: 12 }, yaxis: { min: 0, axisLabel: 'Fitness & Population size', axisLabelOffset: -150, axisLabelFontSizePixels: 12 }, grid: { hoverable: true, clickable: true }, selection: { mode: 'xy' }",
          "datasource": [ 
              { "filename": "<cid>.000.hst", "cols": "1:2", "line_range": "1:10000", "data_def": "{label: 'fitness', data: d1, lines: { show: true }, color: 'rgb(255,50,50)'}" }, 
-             { "filename": "<cid>.000.hst", "cols": "1:7", "line_range": "1:10000", "data_def": "{label: 'pop size', data: d2, lines: { show: true }, color: 'rgb(0,0,255)'}" }
+             { "filename": "<cid>.000.hst", "cols": "1:7", "line_range": "1:10000", "data_def": "{label: 'pop size', data: d2, lines: { show: true }, color: 'rgb(0,0,255)', yaxis: 2}" }
          ]
       }, 
       { 
@@ -91,6 +91,14 @@
              { "filename": "<cid>.000.plm", "cols": "1:4", "line_range": "-109:100000", "data_def": "{ label: 'Deleterious', data: d1, bars: { show: true }, color: 'rgb(200,0,0)'}" }, 
              { "filename": "<cid>.000.plm", "cols": "1:5", "line_range": "-109:100000", "data_def": "{ label: 'Favorable', data: d2, bars: { show: true }, color: 'rgb(0,200,0)'}" }, 
              { "filename": "<cid>.000.plm", "cols": "1:7", "line_range": "-109:100000", "data_def": "{ label: 'Neutrals', data: d3, bars: { show: true }, color: 'rgb(0,0,200)'}" }
+         ]
+      }, 
+      { 
+         "ptype": "plotly-hist", 
+         "title": "Initial Contrasting Alleles",
+         "options": "legend: { position: 'nw'}, xaxis: { axisLabel: 'x'}, yaxis: { axisLabel: 'y'}",
+         "datasource": [ 
+             { "filename": "<cid>.000.ica", "cols": "3", "line_range": "6:989", "data_def": "{label: 'Initial contrasting alleles', data: d1, lines: { show: true }, color: 'rgb(200,0,0)'}" }
          ]
       } 
    ]

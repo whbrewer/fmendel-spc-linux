@@ -574,7 +574,7 @@
           <select id="pop_growth_model" name="pop_growth_model" accesskey="5"
                   class="form-control" style="width:auto" 
                   onchange="fxn_pop_growth_model(this.value)">
-            %opts = {'0': 'Off (fixed population size)', '1': 'Exponential growth', '2': 'Carrying capacity model'}
+            %opts = {'0': 'Off (fixed population size)', '1': 'Exponential growth', '2': 'Carrying capacity model', '3': 'Prescribed growth'}
             %for key, value in opts.iteritems():
               %if key == pop_growth_model:
                 <option selected value="{{key}}">{{value}}
@@ -596,6 +596,16 @@
         </div>
       </div>
        
+      <div class="form-group">
+        <label for="carrying_capacity" style="left:20px" class="control-label col-xs-6">
+          :: carrying capacity:</label>      
+        <div class="col-xs-6">
+          <input type="number" name="carrying_capacity" class="form-control"
+                 min="0" max="10000" step="100" onchange="validate(this)"
+                 value="{{carrying_capacity}}">
+        </div>
+      </div>
+
       <div class="form-group">
         <label for="bottleneck_yes" class="control-label col-xs-6">
           5. Bottleneck?</label>      
@@ -1040,6 +1050,18 @@
       </div>
 
       <div class="form-group">
+        <label for="initial_alleles_pop_frac" class="control-label col-xs-6">
+          &nbsp;&nbsp;&nbsp; :: fraction of population which has allele:<br>
+        </label>
+        <div class="col-xs-6">
+          <input type="number" name="initial_alleles_pop_frac" title="0 - 1"
+              value="{{initial_alleles_pop_frac}}" min="0" max="1" step="0.1"
+              onchange="validate(this)"
+              class="form-control">
+        </div>
+      </div>
+
+      <div class="form-group">
         <label for="track_neutrals" class="control-label col-xs-6">    
           2. Include neutrals in analysis:</label>
         <div class="col-xs-6">
@@ -1163,13 +1185,15 @@
 
 <script>
   $(document).ready(function() {    
-    $('#desc').tagsinput('add', 'v2.5.1');
+    $('#desc').tagsinput('add', 'v2.6.0');
     $('[data-toggle="tooltip"]').tooltip(); 
   });
   dmi = document.mendel_input;
   //fxn_synergistic_epistasis_disable();
   document.getElementById("ptv").style.display = "none";
   dmi.pop_growth_rate.readOnly = false;
+  dmi.num_contrasting_alleles.readOnly = false;
+  dmi.max_total_fitness_increase.readOnly = false;
   // set select option boxes with proper values
   document.getElementById('fitness_distrib_type').value={{fitness_distrib_type}};
   document.getElementById('selection_scheme').value={{selection_scheme}};
