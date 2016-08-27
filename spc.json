@@ -7,6 +7,7 @@
    "command": "../../../../apps/mendel/mendel",
    "preprocess": "None",
    "postprocess": "None",
+   "assets": [ "mendel.js", "help.html", "about.html" ], 
    "plots": [
       { 
          "ptype": "flot-line", 
@@ -96,7 +97,7 @@
       { 
          "ptype": "flot-line", 
          "title": "Total number of variants vs. allele frequencies",
-         "options": "xaxis: { axisLabel: 'Allele Frequency Class', axisLabelFontSizePixels: 12 }, yaxis: { axisLabel: 'Total Number of Variants', axisLabelOffset: -100, axisLabelFontSizePixels: 12 }, grid: { hoverable: true, clickable: true }, selection: { mode: 'xy' }",
+         "options": "xaxis: { axisLabel: 'Allele Frequency Frequency (1-99)', axisLabelFontSizePixels: 12, min:1, max:99 }, yaxis: { axisLabel: 'Total Number of Variants', axisLabelOffset: -100, axisLabelFontSizePixels: 12 }, grid: { hoverable: true, clickable: true }, selection: { mode: 'xy' }",
          "datasource": [ 
              { "filename": "<cid>.000.plmcor", "cols": "1:5", "line_range": "-109:100000", "data_def": "{ label: 'Deleterious', data: d1, bars: { show: true }, color: 'rgb(200,0,0)'}" }, 
              { "filename": "<cid>.000.plmcor", "cols": "1:6", "line_range": "-109:100000", "data_def": "{ label: 'Favorable', data: d2, bars: { show: true }, color: 'rgb(0,200,0)'}" }, 
