@@ -1,7 +1,7 @@
 {
    "name": "mendel",
    "description": "Mendel's Accountant (MENDEL) is an advanced numerical simulation program for modeling genetic change over time",
-   "category": "testing",
+   "category": "genetics",
    "language": "python",
    "input_format": "namelist",
    "command": "../../../../apps/mendel/mendel",
