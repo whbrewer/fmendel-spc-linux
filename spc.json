@@ -4,7 +4,7 @@
    "category": "genetics",
    "language": "python",
    "input_format": "namelist",
-   "command": "../../../../apps/mendel/mendel",
+   "command": "<rel_apps_path>/mendel/mendel",
    "preprocess": "None",
    "postprocess": "None",
    "assets": [ "mendel.js", "help.html", "about.html" ], 
@@ -89,9 +89,9 @@
          "title": "Allele Frequencies",
          "options": "xaxis: { axisLabel: 'Allele Frequency', axisLabelFontSizePixels: 12 }, yaxis: { axisLabel: 'Number of Alleles', axisLabelOffset: -100, axisLabelFontSizePixels: 12 }, grid: { hoverable: true, clickable: true }, selection: { mode: 'xy' }",
          "datasource": [ 
-             { "filename": "<cid>.000.plm", "cols": "1:5", "line_range": "-109:100000", "data_def": "{ label: 'Deleterious', data: d1, bars: { show: true }, color: 'rgb(200,0,0)'}" }, 
-             { "filename": "<cid>.000.plm", "cols": "1:6", "line_range": "-109:100000", "data_def": "{ label: 'Favorable', data: d2, bars: { show: true }, color: 'rgb(0,200,0)'}" }, 
-             { "filename": "<cid>.000.plm", "cols": "1:7", "line_range": "-109:100000", "data_def": "{ label: 'Neutrals', data: d3, bars: { show: true }, color: 'rgb(0,0,200)'}" }
+             { "filename": "<cid>.000.plm", "cols": "1:5", "line_range": "3:103", "data_def": "{ label: 'Deleterious', data: d1, bars: { show: true }, color: 'rgb(200,0,0)'}" }, 
+             { "filename": "<cid>.000.plm", "cols": "1:6", "line_range": "3:103", "data_def": "{ label: 'Favorable', data: d2, bars: { show: true }, color: 'rgb(0,200,0)'}" }, 
+             { "filename": "<cid>.000.plm", "cols": "1:7", "line_range": "3:103", "data_def": "{ label: 'Neutrals', data: d3, bars: { show: true }, color: 'rgb(0,0,200)'}" }
          ]
       }, 
       { 
